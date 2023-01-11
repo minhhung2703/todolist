@@ -306,7 +306,6 @@ div#form {
 }
 
 #userform .form-group input.form-control {
-  margin: 2px;
   height: auto;
   background-color: rgba(237, 235, 250, 0.1);
   color: #FFF;

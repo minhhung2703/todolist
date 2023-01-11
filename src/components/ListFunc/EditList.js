@@ -1,5 +1,5 @@
-import {useState} from "react";
 import axios from "axios";
+import { useState } from "react";
 
 export default function EditList({ data, url, visible, onClose }) {
   const [name, setName] = useState()
@@ -11,16 +11,16 @@ export default function EditList({ data, url, visible, onClose }) {
       description: desc
     }
     await axios
-    .patch(url.url, formData, {headers: url.headers})
-  } 
-  
+      .patch(url.url, formData, { headers: url.headers })
+  }
+
 
   const handleOnClose = (e) => {
     if (e.target.id === "EditList") onClose();
   };
   if (!visible) return null;
 
-  
+
   return (
     <div
       id="EditList"
@@ -33,7 +33,7 @@ export default function EditList({ data, url, visible, onClose }) {
           <input
             type="text"
             value={name || ""}
-            onChange={(e)=>setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             placeholder={data.name}
             className="px-2 py-2 text-lg capitalize rounded-lg bg-gray-700"
           />
@@ -41,16 +41,16 @@ export default function EditList({ data, url, visible, onClose }) {
           <input
             type="text"
             value={desc || ""}
-            onChange={(e)=>setDesc(e.target.value)}
+            onChange={(e) => setDesc(e.target.value)}
             placeholder={data.description}
             className="px-2 py-2 text-lg capitalize rounded-lg bg-gray-700"
           />
         </div>
         <div className="flex items-center justify-end mt-8">
-            <button className="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg " onClick={onClose}>Cancel</button>
-            <button onClick={EditList} type="submit" className="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
+          <button className="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg " onClick={onClose}>Cancel</button>
+          <button onClick={EditList} type="submit" className="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
         </div>
       </form>
     </div>
-    );
-  }
+  );
+}

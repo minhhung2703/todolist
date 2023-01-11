@@ -1,7 +1,7 @@
+import { useContext, useRef, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { useRef, useContext, useState } from 'react';
+import axios from '../../axios/axios';
 import { AuthContext } from '../../Context/AuthProvider';
-import axios from '../../axios/axios'
 
 export default function LoginPage() {
   const userRef = useRef();
@@ -136,15 +136,14 @@ export default function LoginPage() {
                   <h2 className="text-uppercase text-center"> Log in</h2>
                   <form id="login" onSubmit={handleLogin}>
                     <div className="form-group">
-                      <label> Your Email<span className="req">*</span> </label>
-                      <input type="email" className="form-control" id="email" required data-validation-required-message="Please enter your email address." autocomplete="off"
+                      <input type="email" className="form-control" id="email" required placeholder="Please enter your email address." autocomplete="off"
                         ref={userRef}
                       />
                       <p className="help-block text-danger"></p>
                     </div>
                     <div className="form-group">
-                      <label> Password<span className="req">*</span> </label>
-                      <input type="password" className="form-control" id="password" required data-validation-required-message="Please enter your password" autocomplete="off"
+                      <label><span className="req"></span></label>
+                      <input type="password" className="form-control" id="password" required placeholder="Please enter your password" autocomplete="off"
                         ref={passwordRef}
                       />
                       <p className="help-block text-danger"></p>

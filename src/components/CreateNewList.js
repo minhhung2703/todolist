@@ -1,19 +1,19 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 
 export default function CreateNewList({ visible, onClose }) {
   const [name, putName] = useState();
   const [desc, putDesc] = useState();
   const [success, setSuccess] = useState(false);
-  
+
   const user = JSON.parse(localStorage.getItem("user-data"));
   const headers = {
-      "access-token": user.access_token,
-      'uid': user.uid,
-      'client': user.client,
+    "access-token": user.access_token,
+    'uid': user.uid,
+    'client': user.client,
   };
 
-  const postList = async(e) => {
+  const postList = async (e) => {
     e.preventDefault();
     setSuccess(false)
     const formData = {
@@ -22,11 +22,11 @@ export default function CreateNewList({ visible, onClose }) {
     }
 
     await axios
-    .post("http://dev.thanqminh.com:3000/task_lists", formData, {headers: headers})
-    .then((res) => {
-      setSuccess(true)
-      window.location.reload(false);
-    });
+      .post("http://dev.thanqminh.com:3000/task_lists", formData, { headers: headers })
+      .then((res) => {
+        setSuccess(true)
+        window.location.reload(false);
+      });
     putName('');
     putDesc('');
   }
@@ -52,7 +52,7 @@ export default function CreateNewList({ visible, onClose }) {
           <input
             value={name || ""}
             onClick={hiddenMessage}
-            onChange={(e) => {putName(e.target.value)}}
+            onChange={(e) => { putName(e.target.value) }}
             type="text"
             placeholder="Enter name list"
             className="px-2 py-2 text-lg capitalize rounded-lg bg-gray-700"
@@ -61,7 +61,7 @@ export default function CreateNewList({ visible, onClose }) {
           <input
             value={desc || ""}
             onClick={hiddenMessage}
-            onChange={(e) => {putDesc(e.target.value)}}
+            onChange={(e) => { putDesc(e.target.value) }}
             type="text"
             placeholder="Enter description"
             className="px-2 py-2 text-lg capitalize rounded-lg bg-gray-700"
@@ -69,8 +69,8 @@ export default function CreateNewList({ visible, onClose }) {
         </div>
         {success && <p className="pt-2 text-green-400 font-semibold">Created list todo success</p>}
         <div className="flex items-center justify-end mt-8">
-            <button className="bg-gray-700 hover:bg-slate-600 px-5 py-2 text-lg rounded-lg " onClick={onClose}>Cancel</button>
-            <button onClick={postList} type="submit" className="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Create list</button>
+          <button className="bg-gray-700 hover:bg-slate-600 px-5 py-2 text-lg rounded-lg " onClick={onClose}>Cancel</button>
+          <button onClick={postList} type="submit" className="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Create list</button>
         </div>
       </form>
     </div>

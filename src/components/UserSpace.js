@@ -1,9 +1,8 @@
-import add from "../assets/img/add.svg";
-import List from "./List";
-import NewList from "./CreateNewList";
-import { useState, useEffect } from "react";
-// import listData from "./../constants/listData";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import add from "../assets/img/add.svg";
+import NewList from "./CreateNewList";
+import List from "./List";
 
 export default function UserSpace() {
     const [lists, setLists] = useState([]);

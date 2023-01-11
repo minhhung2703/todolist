@@ -1,7 +1,6 @@
 import userImg from "../assets/img/user.svg";
 import logout from "../assets/img/logout.svg";
-import {Link, useNavigate} from "react-router-dom";
-// import {useState} from "react"
+import { Link, useNavigate } from "react-router-dom";
 import axios from "../axios/axios";
 
 export default function DropDownProfile() {
@@ -19,7 +18,7 @@ export default function DropDownProfile() {
     e.preventDefault();
     console.log(headers);
     try {
-      const res = await axios.delete('/auth/sign_out',{headers: headers,}
+      const res = await axios.delete('/auth/sign_out', { headers: headers, }
       );
       console.log(res);
       localStorage.clear();
@@ -39,15 +38,15 @@ export default function DropDownProfile() {
       </p>
       <Link to="/profile">
         <div
-        className="flex justify-start items-center px-4 py-2 text-gray-300 hover:bg-indigo-500"
+          className="flex justify-start items-center px-4 py-2 text-gray-300 hover:bg-indigo-500"
         >
-        <img className="w-4 mr-2" src={userImg} alt="profile" /> My Profile
+          <img className="w-4 mr-2" src={userImg} alt="profile" /> My Profile
         </div>
       </Link>
       <hr />
       <Link to="/" onClick={handleLogout}>
-        <div className="flex justify-start items-center px-4 hover:bg-indigo-500">  
-          <img className="w-5 mr-2" src={logout} alt="logout"/> 
+        <div className="flex justify-start items-center px-4 hover:bg-indigo-500">
+          <img className="w-5 mr-2" src={logout} alt="logout" />
           <div className="py-2 text-red-600  cursor-pointer"> Log out </div>
         </div>
       </Link>

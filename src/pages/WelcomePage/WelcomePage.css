@@ -1,0 +1,219 @@
+.banner {
+  margin-top: 0;
+  padding: 260px 0px 100px 0px;
+  background-image: url("../../assets/img/univers.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.banner__row{
+    display: flex;
+    width: 100%;
+    padding: 0 170px;
+}
+.banner__content{
+    display: flex;
+    width: 50%;
+}
+.banner__img{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    z-index: 0;
+}
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+.banner p {
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+
+.banner img {
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
+.btn__connect{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 20px 10px;
+    border: 3px solid #fff;
+    width: 250px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+.icon__connect{
+    margin-left: 10px;
+}
+
+.btn__connect:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+ 
+
+/*Tablet & mobile*/
+@media (min-width: 63.9375em) and (max-width: 80em) {
+    .banner__row{
+        padding: 0 50px;
+    }
+    .banner .tagline {
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        padding: 8px 10px;
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+      .banner h1 {
+        font-size: 50px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        line-height: 1;
+        margin-bottom: 20px;
+        display: block;
+      }
+      .banner p {
+        color: #b8b8b8;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        line-height: 1.5em;
+        width: 96%;
+      }
+
+    .btn__connect{
+        padding: 15px 8px;
+        width: 225px;
+        font-size: 1.2rem;
+    }
+    
+}
+
+
+/*Tablet*/
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .banner__row{
+        padding: 0 50px;    
+    }
+
+    .banner .tagline {
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        padding: 8px 10px;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      .banner h1 {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .banner p {
+        color: #b8b8b8;
+        font-size: 13px;
+        letter-spacing: 0.8px;
+        line-height: 1.5em;
+        width: 96%;
+    }
+
+    .btn__connect{
+        padding: 15px 8px;
+        width: 225px;
+        font-size: 1rem;
+    }
+    .btn__connect svg{
+        width: 18px;
+        height: 18px;
+    }
+}
+/*Mobile*/
+@media (max-width: 46.1875em) {
+    .banner__row{
+        padding: 0 50px;
+        flex-direction: column-reverse;
+    }
+
+    .banner__content{
+        width: 100%;
+    }
+    .banner__img{
+        width: 100%;
+    }
+
+    .banner .tagline {
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        padding: 8px 10px;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      .banner h1 {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .banner p {
+        color: #b8b8b8;
+        font-size: 13px;
+        letter-spacing: 0.8px;
+        line-height: 1.5em;
+        width: 96%;
+    }
+
+    .btn__connect{
+        padding: 15px 8px;
+        width: 225px;
+        font-size: 1rem;
+    }
+    .btn__connect svg{
+        width: 18px;
+        height: 18px;
+    }
+    
+    .btn__connect{
+        padding: 15px 8px;
+        width: 225px;
+        font-size: 1.2rem;
+    }
+}
